@@ -1,7 +1,6 @@
 # RSA_Encryption
-INF638_Project
 
-**Hey guys! Feel free to change upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always)**
+**Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always)**
 
 ## Nov 8th
 I have modified my RSA code and convert it into python files. You can call the method like this:
