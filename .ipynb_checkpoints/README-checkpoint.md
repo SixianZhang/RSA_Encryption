@@ -3,9 +3,26 @@
 **Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always).**
 
 ## Nov 14th
+
+### Prime Number Generator
+
+The **random_prime** function in RSA_Code is modifed. Another mode based on Miller-Rabin primality test is added:
+```
+# simple test
+RSA_Code.random_prime(d = 32, mode = 'simple')
+
+# Miller-Rabin test
+RSA_Code.random_prime(d = 53, mode = 'MR', k = 100)
+
+# Or call MR_primality_test directly. k is the number of rounds of testing
+RSA_Code.MR_primality_test(n, k)
+```
+
+### Interactive Interface
+
 Now the RSA_Code can show an interactive interface. 
 
-I limit the maximum key length to 56 in case it crash the computer.
+~~I limit the maximum key length to 56 in case it crash the computer.~~Since we are using different generator now so 56 is fine.
 
 ```
 Please enter the length of the key:  64

@@ -5,33 +5,70 @@ from IPython.core.debugger import set_trace
 
 
 # ## Key generation
-def random_prime(d = 32):
+def random_prime(d = 32, mode = 'MR', k = 10):
     # generate a large prime number randomly
     # Simple method
     # Consider Miller–Rabin and Solovay–Strassen primality test
     n = random.randint(2, 2**d - 1)
     
     # Preliminary Test
-    while n % 2 == 0 or n % 3 == 0:
+    while n % 2 == 0 or n < 3:
         n = random.randint(2, 2**d - 1)
     
     # Iterative Test
-    while True:
-        i = 5
-        while i*i <= n:
-            if n % i == 0 or n % (i + 2) == 0:
-                break
-            i += 6
-
-        if i*i <= n:
+    if mode == 'simple':
+        while not simple_primality_test(n):
             n += 2
-            while n % 2 == 0 or n % 3 == 0:
-                n += 2
-            continue
-        else:
-            break
+    elif mode == 'MR':
+        while not MR_primality_test(n, k):
+            n += 2
 
     return n
+
+def simple_primality_test(n:int):
+    # Iterative Test
+    while n % 2 == 0 or n % 3 == 0 or n < 3 == 0:
+        return False
+    
+    i = 5
+    while i*i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+
+    return True
+
+def MR_primality_test(n:int, k:int):
+    
+    if n & 1 == 0:
+        return False
+    
+    d = n - 1
+    r = 0
+    
+    while d & 1 == 0:
+        r += 1
+        d = d >> 1
+    
+    for i in range(0, k):
+        keep_loop = False
+        a = random.randint(2, n-2)
+        x = fast_expontiation(a, d, n)
+        
+        if x == 1 or x == n - 1:
+            continue
+            
+        for j in range(0, r - 1):
+            x = x**2 % n
+            if x == n - 1:
+                keep_loop = True
+                break
+        
+        if keep_loop:
+            continue
+        else:
+            return False
+    return True
 
 def gcd(x, y):
     if x < y:
@@ -110,19 +147,17 @@ def key_generation(d = 32):
 
 # ## Encryption
 
-def fast_expontiation(plain_text:int, key:int, n = None):
-    # realize the fast expontiation algorithm
+def fast_expontiation(base:int, power:int, n = 1):
+    # Calculating base^power mod n
 #     if type(key) is int:
-    key_seq = int_to_list(key)
+    power_seq = int_to_list(power)
     
-    answer = plain_text
+    answer = base
     
-    for i in range(1, len(key_seq)):
+    for i in range(1, len(power_seq)):
         answer = (answer ** 2) % n
-#         answer = moduloMultiplication(answer, answer, n)
-        if key_seq[i] == 1:
-            answer = (answer * plain_text) % n
-#             answer = moduloMultiplication(answer, plain_text, n)
+        if power_seq[i] == 1:
+            answer = (answer * base) % n
  
     return answer
 
@@ -207,9 +242,9 @@ def main():
     while True:
         try:
             key_length = int(input("Please enter the length of the key: "))
-            if key_length > 56:
-                print("The length is too long for this program right now. Use 56 instead.")
-                key_length = 56
+#             if key_length > 56:
+#                 print("The length is too long for this program right now. Use 56 instead.")
+#                 key_length = 56
             break
         except ValueError:
             print("Key length has to be an integer")
