@@ -26,6 +26,7 @@ RSA_Code.random_prime(d = 53, mode = 'MR', k = 100)
 # Or call MR_primality_test directly. k is the number of rounds of testing
 RSA_Code.MR_primality_test(n, k)
 ```
+Also, <a>https://primes.utm.edu/curios/includes/primetest.php</a> is a good prime checker for validation.
 
 ### Interactive Interface
 
