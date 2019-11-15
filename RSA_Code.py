@@ -1,8 +1,7 @@
 import random
 import numpy as np
-import matplotlib.pyplot as plt
-from IPython.core.debugger import set_trace
-
+# import matplotlib.pyplot as plt
+# from IPython.core.debugger import set_trace
 
 # ## Key generation
 def random_prime(d = 32, mode = 'MR', k = 10):
