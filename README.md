@@ -4,10 +4,19 @@
 
 ## Nov 14th
 
+### RSA Test
+
+Notebook for RSA test is uploaded. It includes following test currently:
+
+1. Time comparison for prime number generator
+1. Time comparison for exponentiation operation
+
+I plan to add another two time comparison tests that need Shor algorithm and ECC algorithm from you guys.
+
 ### Prime Number Generator
 
 The **random_prime** function in RSA_Code is modifed. Another mode based on Miller-Rabin primality test is added:
-```
+```{python}
 # simple test
 RSA_Code.random_prime(d = 32, mode = 'simple')
 
@@ -22,7 +31,7 @@ RSA_Code.MR_primality_test(n, k)
 
 Now the RSA_Code can show an interactive interface. 
 
-~~I limit the maximum key length to 56 in case it crash the computer.~~Since we are using different generator now so 56 is fine.
+~~I limit the maximum key length to 56 in case it crash the computer.~~Since we are using different generator now so 56 is fine. I set the maximum to 1024 but it can surely go larger. 
 
 ```
 Please enter the length of the key:  64

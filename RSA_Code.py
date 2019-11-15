@@ -242,9 +242,9 @@ def main():
     while True:
         try:
             key_length = int(input("Please enter the length of the key: "))
-#             if key_length > 56:
-#                 print("The length is too long for this program right now. Use 56 instead.")
-#                 key_length = 56
+            if key_length > 1024:
+                print("The maximum length for this program is currently 1024. Use 1024 instead.")
+                key_length = 1024
             break
         except ValueError:
             print("Key length has to be an integer")
