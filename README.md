@@ -31,7 +31,7 @@ RSA_Code.MR_primality_test(n, k)
 
 Now the RSA_Code can show an interactive interface. 
 
-<strike>I limit the maximum key length to 56 in case it crash the computer.</strike> Since we are using different generator now so 56 is fine. I set the maximum to 1024 but it can surely go larger. 
+<strike>I limit the maximum key length to 56 in case it crashes the computer.</strike> Since we are using different generator now so 56 is fine. I set the maximum to 1024 but it can surely go larger. 
 
 ```
 Please enter the length of the key:  2048
