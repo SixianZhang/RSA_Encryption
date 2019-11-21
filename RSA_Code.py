@@ -263,6 +263,13 @@ def main():
     # Key generation
     p, q, n, phi_n, e, d = key_generation(key_length)
 
+    print("n is: " + str(n))
+    print("p is: " + str(p))
+    print("q is: " + str(q))
+    print("e is: " + str(e))
+    print("d is: " + str(d))
+
+    
     # Plain text
     plain_text_raw = str(input("Please enter the plain text: "))
     
