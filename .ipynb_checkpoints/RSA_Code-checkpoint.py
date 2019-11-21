@@ -8,6 +8,9 @@ def random_prime(d = 32, mode = 'MR', k = 10):
     # generate a large prime number randomly
     # Simple method
     # Consider Miller–Rabin and Solovay–Strassen primality test
+    
+    
+    
     n = random.randint(2, 2**d - 1)
     
     # Preliminary Test
@@ -38,6 +41,12 @@ def simple_primality_test(n:int):
     return True
 
 def MR_primality_test(n:int, k:int):
+    
+    if n <= 1:
+        return False
+    
+    if n < 4:
+        return True
     
     if n & 1 == 0:
         return False
