@@ -2,6 +2,10 @@
 
 **Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always).**
 
+## Nov 21st
+
+Link to the presentation: <a>https://docs.google.com/presentation/d/1IM2N933Ork14Mb6xNDhvA3ELbX8WMePN09Md2KCICa8/edit#slide=id.g7902c662a5_0_15</a>
+
 ## Nov 14th 
 
 ### RSA Test
