@@ -1,6 +1,15 @@
 # RSA_Encryption
 
-**Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always).**
+This is the RSA example code we used for INF 638 cybersecurity course project. We implemented following functions in the *RSA_Code.py*:
+1. Key generation, encryption, and decryption.
+1. Prime number generator based on Miller-Rabin primality test, which can support longer key length.
+1. Fast exponentiation for encryption and decryption.
+1. Decryption using CRT.
+1. PeterShor algorithm that tries to break RSA with small keys.
+1. Some time comparison tests.
+<!--
+**Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always).** 
+-->
 
 ## Nov 21st
 

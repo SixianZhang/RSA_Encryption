@@ -244,6 +244,45 @@ def str_to_list(string: str):
     
     return lst
 
+def shor(n):
+    if n <= 2:
+        raise ValueError("n has to be greater than 2.")
+    
+    for a in range(2, n):
+        
+        if math.gcd(a, n) != 1:
+            # Then we already find the factor
+            p = math.gcd(a, n)
+            q = n // p
+            
+            if p > q:
+                p, q = q, p
+            
+            return p, q
+        
+        else:
+            
+            r = 2
+            
+            while r < n:
+                # Check if r satisfies 
+                if pow(a, r, n) == 1:
+                    if math.gcd(n, pow(a, r//2) - 1) == 1 and math.gcd(n, pow(a, r//2) + 1) == 1:
+                        p = math.gcd(pow(a, r//2) - 1, n)
+                        q = math.gcd(pow(a, r//2) + 1, n)
+                        
+                        if p > q:
+                            p, q = q, p
+                        
+                        return p, q
+
+                # If not, find next r
+                r += 2
+    
+    # If every a is tried, then there is no factors for n.
+    # Return (1, n)
+    return 1, n
+
 def main():
   
     # Input key length
