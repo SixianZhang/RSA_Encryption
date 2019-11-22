@@ -6,7 +6,7 @@ This is the RSA example code we used for the INF 638 cybersecurity course projec
 1. Fast exponentiation for encryption and decryption.
 1. Decryption using CRT.
 1. PeterShor algorithm that tries to break RSA with small keys.
-1. Some time comparison tests.
+1. Some time comparison test in the notebook files.
 <!--
 **Hey guys! Feel free to change or upload your part of the code here. If there is any change you want others to know, just leave the comment here (or using email and message as always).** 
 -->
