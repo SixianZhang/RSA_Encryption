@@ -1,6 +1,6 @@
 # RSA_Encryption
 
-This is the RSA example code we used for INF 638 cybersecurity course project. We implemented following functions in the *RSA_Code.py*:
+This is the RSA example code we used for the INF 638 cybersecurity course project. We implemented following functions in the *RSA_Code.py*:
 1. Key generation, encryption, and decryption.
 1. Prime number generator based on Miller-Rabin primality test, which can support longer key length.
 1. Fast exponentiation for encryption and decryption.
